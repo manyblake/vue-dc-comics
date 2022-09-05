@@ -100,13 +100,12 @@ footer {
       display: flex;
       align-items: center;
       max-height: 350px;
+      overflow: hidden;
 
       picture {
-        overflow: hidden;
         margin-left: auto;
         aspect-ratio: 1/1;
         height: 400px;
-        object-position: center;
 
         img {
           height: 100%;
