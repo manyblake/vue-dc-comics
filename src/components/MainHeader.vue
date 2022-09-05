@@ -50,7 +50,7 @@ export default {};
 @import "@/components/variables.scss";
 header {
   .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
 
@@ -66,7 +66,6 @@ header {
         display: flex;
         gap: 1.5rem;
         justify-content: space-between;
-
         height: 100%;
 
         li {
