@@ -55,7 +55,7 @@ header {
     display: flex;
 
     .icon {
-      width: 6.5rem;
+      width: 7.5rem;
       padding: 1.5rem;
     }
 

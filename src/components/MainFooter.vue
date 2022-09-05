@@ -173,7 +173,7 @@ footer {
   }
   &:after {
     height: 3rem;
-    background-color: #1f1f1f;
+    background-color: $bg-darker-grey;
     display: block;
     content: "";
   }
