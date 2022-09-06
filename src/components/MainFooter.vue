@@ -6,44 +6,31 @@
           <div>
             <li class="footer__links">
               <h3>Dc Comics</h3>
-              <a href="#">Characters</a>
-              <a href="#">Comics</a>
-              <a href="#">Movies</a>
-              <a href="#">TV</a>
-              <a href="#">Games</a>
-              <a href="#">Videos</a>
-              <a href="#">News</a>
+              <a v-for="(link, i) in links1" :key="i" :href="link.link">
+                {{ link.text }}
+              </a>
             </li>
 
             <li class="footer__links">
               <h3>Shop</h3>
-              <a href="#">Shop DC</a>
-              <a href="#">Shop DC Collectibles</a>
+              <a v-for="(link, i) in links2" :key="i" :href="link.link">
+                {{ link.text }}
+              </a>
             </li>
           </div>
 
           <li class="footer__links">
             <h3>Dc</h3>
-            <a href="#">Terms Of Use</a>
-            <a href="#">Privacy Policy (New)</a>
-            <a href="#">Ad Choice</a>
-            <a href="#">Advertising</a>
-            <a href="#">Jobs</a>
-            <a href="#">Subscriptions</a>
-            <a href="#">Talent Workshops</a>
-            <a href="#">CPSC Certificates</a>
-            <a href="#">Ratings</a>
-            <a href="#">Shop Help</a>
-            <a href="#">Contact Us</a>
+            <a v-for="(link, i) in links3" :key="i" :href="link.link">
+              {{ link.text }}
+            </a>
           </li>
 
           <li class="footer__links">
             <h3>Sites</h3>
-            <a href="#">DC</a>
-            <a href="#">MAD Magazines</a>
-            <a href="#">DC Kids</a>
-            <a href="#">DC Universe</a>
-            <a href="#">DC Power Visa</a>
+            <a v-for="(link, i) in links4" :key="i" :href="link.link">
+              {{ link.text }}
+            </a>
           </li>
         </ul>
 
@@ -60,20 +47,8 @@
         <div class="footer__links">
           <div class="footer__follow-us">
             <p>Follow Us</p>
-            <a href="#">
-              <img src="../assets/img/footer-facebook.png" />
-            </a>
-            <a href="#">
-              <img src="../assets/img/footer-twitter.png" />
-            </a>
-            <a href="#">
-              <img src="../assets/img/footer-youtube.png" />
-            </a>
-            <a href="#">
-              <img src="../assets/img/footer-pinterest.png" />
-            </a>
-            <a href="#">
-              <img src="../assets/img/footer-periscope.png" />
+            <a v-for="(social, i) in socials" :key="i" :href="social.href">
+              <img :src="social.src" />
             </a>
           </div>
         </div>
@@ -83,7 +58,137 @@
 </template>
 
 <script>
-export default {};
+const links1 = [
+  {
+    text: "Characters",
+    link: "#",
+  },
+  {
+    text: "Comics",
+    link: "#",
+  },
+  {
+    text: "Movies",
+    link: "#",
+  },
+  {
+    text: "TV",
+    link: "#",
+  },
+  {
+    text: "Games",
+    link: "#",
+  },
+  {
+    text: "Videos",
+    link: "#",
+  },
+  {
+    text: "News",
+    link: "#",
+  },
+];
+
+const links2 = [
+  {
+    text: "Shop DC",
+    link: "#",
+  },
+  {
+    text: "Shop DC Collectibles",
+    link: "#",
+  },
+];
+
+const links3 = [
+  {
+    text: "Terms Of Use",
+    link: "#",
+  },
+  {
+    text: "Privacy Policy (New)",
+    link: "#",
+  },
+  {
+    text: "Ad Choice",
+    link: "#",
+  },
+  {
+    text: "Advertising",
+    link: "#",
+  },
+  {
+    text: "Jobs",
+    link: "#",
+  },
+  {
+    text: "Subscriptions",
+    link: "#",
+  },
+  {
+    text: "Talent Workshops",
+    link: "#",
+  },
+  {
+    text: "CPSC Certificates",
+    link: "#",
+  },
+  {
+    text: "Ratings",
+    link: "#",
+  },
+  {
+    text: "Shop Help",
+    link: "#",
+  },
+  {
+    text: "Contact Us",
+    link: "#",
+  },
+];
+
+const links4 = [
+  { text: "DC", link: "#" },
+  { text: "MAD Magazines", link: "#" },
+  { text: "DC Kids", link: "#" },
+  { text: "DC Universe", link: "#" },
+  { text: "DC Power Visa", link: "#" },
+];
+
+const socials = [
+  {
+    href: "#",
+    src: require("../assets/img/footer-facebook.png"),
+  },
+  {
+    href: "#",
+    src: require("../assets/img/footer-twitter.png"),
+  },
+  {
+    href: "#",
+    src: require("../assets/img/footer-youtube.png"),
+  },
+  {
+    href: "#",
+    src: require("../assets/img/footer-pinterest.png"),
+  },
+  {
+    href: "#",
+    src: require("../assets/img/footer-periscope.png"),
+  },
+];
+
+export default {
+  data() {
+    return {
+      links1: links1,
+      links2: links2,
+      links3: links3,
+      links4: links4,
+      socials: socials,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
