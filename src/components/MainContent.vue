@@ -1,10 +1,17 @@
 <template>
   <main>
-    <ul class="container">
-      <li v-for="(card, i) in cards" :key="i">
-        <MainContentCard :title="card.series" :img="card.thumb" />
-      </li>
-    </ul>
+    <section class="series container">
+      <h3>Current Series</h3>
+
+      <ul class="card-list">
+        <li v-for="(card, i) in cards" :key="i">
+          <MainContentCard :title="card.series" :img="card.thumb" />
+        </li>
+      </ul>
+
+      <button>Load More</button>
+    </section>
+    <MainToolbar />
   </main>
 </template>
 
@@ -96,7 +103,8 @@ const cards = [
   },
 ];
 
-import MainContentCard from "@/components/MainContentCard.vue";
+import MainToolbar from "../components/MainToolbar.vue";
+import MainContentCard from "../components/MainContentCard.vue";
 
 export default {
   data() {
@@ -104,23 +112,66 @@ export default {
       cards: cards,
     };
   },
-  components: { MainContentCard },
+  components: {
+    MainContentCard,
+    MainToolbar,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/components/variables.scss";
+@import "../components/variables.scss";
+
+.series {
+  padding: 50px 0;
+  position: relative;
+
+  h3 {
+    position: absolute;
+    text-transform: uppercase;
+    background-color: $dc-blue;
+    color: white;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 0.25rem 1.5rem;
+  }
+}
+
 main {
   background-color: $bg-main;
   color: white;
-  padding: 50px 0;
+  text-align: center;
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .card-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+
+  button {
+    background-color: $dc-blue;
+    color: white;
+    border: none;
+    padding: 0.25rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  button:hover {
+    background-color: white;
+    color: $dc-blue;
+    transform: scale(110%);
+    transition: all 0.2s linear;
   }
 }
 </style>

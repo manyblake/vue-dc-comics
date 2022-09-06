@@ -2,39 +2,14 @@
   <header>
     <div class="container">
       <div class="icon">
-        <img src="@/assets/img/dc-logo.png" alt="DC Logo" />
+        <img src="../assets/img/dc-logo.png" alt="DC Logo" />
       </div>
       <nav class="main-nav">
         <ul class="main-nav__list">
-          <li>
-            <a class="active" href="#">Characters</a>
-          </li>
-          <li>
-            <a href="#">Comics</a>
-          </li>
-          <li>
-            <a href="#">Movies</a>
-          </li>
-          <li>
-            <a href="#">TV</a>
-          </li>
-          <li>
-            <a href="#">Games</a>
-          </li>
-          <li>
-            <a href="#">Collectibles</a>
-          </li>
-          <li>
-            <a href="#">Videos</a>
-          </li>
-          <li>
-            <a href="#">Fans</a>
-          </li>
-          <li>
-            <a href="#">News</a>
-          </li>
-          <li>
-            <a href="#">Shop</a>
+          <li v-for="(link, i) in links" :key="i">
+            <a :class="i === 0 ? 'active' : ''" :href="link.link">
+              {{ link.text }}
+            </a>
           </li>
         </ul>
       </nav>
@@ -43,11 +18,59 @@
 </template>
 
 <script>
-export default {};
+const navbarLinks = [
+  {
+    text: "Characters",
+    link: "#",
+  },
+  {
+    text: "Comics",
+    link: "#",
+  },
+  {
+    text: "Movies",
+    link: "#",
+  },
+  {
+    text: "TV",
+    link: "#",
+  },
+  {
+    text: "Games",
+    link: "#",
+  },
+  {
+    text: "Collectibles",
+    link: "#",
+  },
+  {
+    text: "Videos",
+    link: "#",
+  },
+  {
+    text: "Fans",
+    link: "#",
+  },
+  {
+    text: "News",
+    link: "#",
+  },
+  {
+    text: "Shop",
+    link: "#",
+  },
+];
+export default {
+  data() {
+    return {
+      links: navbarLinks,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import "@/components/variables.scss";
+@import "../components/variables.scss";
 header {
   .container {
     max-width: 1200px;

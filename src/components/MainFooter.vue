@@ -48,7 +48,7 @@
         </ul>
 
         <picture>
-          <img src="@/assets/img/dc-logo-bg.png" alt="DC Logo BG" />
+          <img src="../assets/img/dc-logo-bg.png" alt="DC Logo BG" />
         </picture>
       </div>
     </div>
@@ -61,19 +61,19 @@
           <div class="footer__follow-us">
             <p>Follow Us</p>
             <a href="#">
-              <img src="@/assets/img/footer-facebook.png" />
+              <img src="../assets/img/footer-facebook.png" />
             </a>
             <a href="#">
-              <img src="@/assets/img/footer-twitter.png" />
+              <img src="../assets/img/footer-twitter.png" />
             </a>
             <a href="#">
-              <img src="@/assets/img/footer-youtube.png" />
+              <img src="../assets/img/footer-youtube.png" />
             </a>
             <a href="#">
-              <img src="@/assets/img/footer-pinterest.png" />
+              <img src="../assets/img/footer-pinterest.png" />
             </a>
             <a href="#">
-              <img src="@/assets/img/footer-periscope.png" />
+              <img src="../assets/img/footer-periscope.png" />
             </a>
           </div>
         </div>
@@ -87,12 +87,12 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import "@/components/variables.scss";
+@import "../components/variables.scss";
 footer {
   color: white;
 
   .footer__bg {
-    background-image: url(@/assets/img/footer-bg.jpg);
+    background-image: url(../assets/img/footer-bg.jpg);
 
     .container {
       max-width: 1200px;

@@ -2,44 +2,12 @@
   <div class="main-toolbar">
     <div class="container">
       <ul class="main-toolbar__list">
-        <li class="main-toolbar__item">
-          <a href="#">
+        <li v-for="(widget, i) in widgets" :key="i" class="main-toolbar__item">
+          <a :href="widget.link">
             <picture>
-              <img src="@/assets/img/buy-comics-digital-comics.png" />
+              <img :src="widget.img" />
             </picture>
-            <span>Digital Comics</span>
-          </a>
-        </li>
-        <li class="main-toolbar__item">
-          <a href="#">
-            <picture>
-              <img src="@/assets/img/buy-comics-merchandise.png" />
-            </picture>
-            <span>DC Merchandise</span>
-          </a>
-        </li>
-        <li class="main-toolbar__item">
-          <a href="#">
-            <picture>
-              <img src="@/assets/img/buy-comics-subscriptions.png" />
-            </picture>
-            <span>Subscription</span>
-          </a>
-        </li>
-        <li class="main-toolbar__item">
-          <a href="#">
-            <picture>
-              <img src="@/assets/img/buy-comics-shop-locator.png" />
-            </picture>
-            <span>Comic Shop Locator</span>
-          </a>
-        </li>
-        <li class="main-toolbar__item">
-          <a href="#">
-            <picture>
-              <img src="@/assets/img/buy-dc-power-visa.svg" />
-            </picture>
-            <span>DC Power Visa</span>
+            <span>{{ widget.text }}</span>
           </a>
         </li>
       </ul>
@@ -48,11 +16,45 @@
 </template>
 
 <script>
-export default {};
+const widgets = [
+  {
+    link: "#",
+    text: "Digital Comics",
+    img: require("../assets/img/buy-comics-digital-comics.png"),
+  },
+  {
+    link: "#",
+    text: "DC Merchandise",
+    img: require("../assets/img/buy-comics-merchandise.png"),
+  },
+  {
+    link: "#",
+    text: "Subscription",
+    img: require("../assets/img/buy-comics-subscriptions.png"),
+  },
+  {
+    link: "#",
+    text: "Comic Shop Locator",
+    img: require("../assets/img/buy-comics-shop-locator.png"),
+  },
+  {
+    link: "#",
+    text: "DC Power Visa",
+    img: require("../assets/img/buy-dc-power-visa.svg"),
+  },
+];
+
+export default {
+  data() {
+    return {
+      widgets: widgets,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import "@/components/variables.scss";
+@import "../components/variables.scss";
 .main-toolbar {
   background-color: $dc-blue;
   color: white;
