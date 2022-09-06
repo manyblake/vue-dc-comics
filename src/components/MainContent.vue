@@ -1,5 +1,9 @@
 <template>
   <main>
+    <div class="hero">
+      <img :src="jumbotron" />
+    </div>
+
     <section class="series container">
       <h3>Current Series</h3>
 
@@ -103,13 +107,15 @@ const cards = [
   },
 ];
 
-import MainToolbar from "../components/MainToolbar.vue";
-import MainContentCard from "../components/MainContentCard.vue";
+import MainToolbar from "./MainToolbar.vue";
+import MainContentCard from "./MainContentCard.vue";
+import jumbotron from "../assets/img/jumbotron.jpg";
 
 export default {
   data() {
     return {
       cards: cards,
+      jumbotron: jumbotron,
     };
   },
   components: {
@@ -139,6 +145,15 @@ export default {
   }
 }
 
+.hero {
+  height: 300px;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
 main {
   background-color: $bg-main;
   color: white;
