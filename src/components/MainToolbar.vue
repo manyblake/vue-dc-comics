@@ -83,6 +83,11 @@ export default {};
             }
           }
         }
+
+        &:hover {
+          transform: scale(110%);
+          transition: transform 0.2s linear;
+        }
       }
     }
   }

@@ -130,6 +130,10 @@ footer {
             font-size: 0.75rem;
             line-height: 1.7;
           }
+          a:hover {
+            color: white;
+            transition: color 0.2s linear;
+          }
         }
       }
     }
@@ -154,18 +158,30 @@ footer {
       font-size: 1.25rem;
     }
 
+    button:hover {
+      background-color: $dc-blue;
+      color: $bg-dark-grey;
+      transition: all 0.2s linear;
+    }
+
     .footer__links {
+      display: flex;
       margin-left: auto;
 
       .footer__follow-us {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
 
         p {
           text-transform: uppercase;
           color: $dc-blue;
           font-weight: 600;
+        }
+
+        a:hover {
+          filter: brightness(0) invert(1);
+          transition: filter 0.2s linear;
         }
       }
     }

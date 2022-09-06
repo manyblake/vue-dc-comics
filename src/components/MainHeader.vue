@@ -79,6 +79,7 @@ header {
 
           a:hover {
             color: $dc-blue;
+            transition: color 0.1s linear;
           }
 
           a.active:after {
